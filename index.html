@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们的官网</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebf4f5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        /* 背景装饰 */
+        .bg-decor {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: rgba(130, 201, 30, 0.2);
+            border-radius: 50%;
+        }
+
+        /* 主容器 */
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(130, 201, 30, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        /* 标题区域 */
+        .header {
+            margin-bottom: 3rem;
+        }
+
+        .title {
+            font-size: 2.8rem;
+            color: #82c91e;
+            margin-bottom: 0.8rem;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8ab4f8;
+            font-weight: 300;
+        }
+
+        /* 纵向导航容器 */
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* 纵向按钮样式 */
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(130, 201, 30, 0.1);
+        }
+
+        .nav-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(130, 201, 30, 0.15);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        /* 图标样式 */
+        .nav-item i {
+            font-size: 1.8rem;
+            margin-right: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        /* 文字样式 */
+        .nav-item .text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #8ab4f8;
+        }
+
+        /* 底部信息 */
+        .footer {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #82c91e;
+            opacity: 0.8;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2.2rem;
+            }
+
+            .nav-item {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-item i {
+                font-size: 1.5rem;
+                margin-right: 1rem;
+            }
+
+            .nav-item .text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decor" id="bgDecor"></div>
+
+    <!-- 主内容 -->
+    <div class="container">
+        <div class="header">
+            <h1 class="title">1888地狱</h1>
+            <p class="subtitle">愿你被世界温柔以待</p>
+        </div>
+
+        <!-- 纵向导航列表 -->
+        <div class="nav-list">
+            <!-- 复制以下代码块添加新按钮 -->
+            <a href="https://www.mcmod.cn/" class="nav-item" target="_blank">
+                <i class="fas fa-cubes" style="color: #82c91e;"></i>
+                <span class="text">联系我们</span>
+            </a>
+            <a href="https://bbs.nga.cn/thread.php?fid=1500000000000000001" class="nav-item" target="_blank">
+                <i class="fas fa-gamepad" style="color: #82c91e;"></i>
+                <span class="text">世界美景</span>
+            </a>
+            <a href="https://music.163.com/" class="nav-item" target="_blank">
+                <i class="fas fa-music" style="color: #8ab4f8;"></i>
+                <span class="text">氛围音乐</span>
+            </a>
+            <a href="https://www.astrobin.com/" class="nav-item" target="_blank">
+                <i class="fas fa-star" style="color: #8ab4f8;"></i>
+                <span class="text">星空探索</span>
+            </a>
+            <!-- 新按钮复制结束 -->
+
+            <!-- 示例：添加新按钮（复制此段修改） -->
+            <!--
+            <a href="你的链接" class="nav-item" target="_blank">
+                <i class="fas fa-图标名" style="color: #82c91e;"></i>
+                <span class="text">按钮文字</span>
+            </a>
+            -->
+        </div>
+
+        <div class="footer">
+            🌿 保持热爱，奔赴山海
+        </div>
+    </div>
+
+    <script>
+        // 生成背景装饰点
+        function createDots() {
+            const bgDecor = document.getElementById('bgDecor');
+            const dotCount = 50; // 点的数量
+
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                
+                // 随机位置
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // 随机大小
+                const size = Math.random() * 4 + 2;
+                
+                // 随机透明度
+                const opacity = Math.random() * 0.5 + 0.1;
+
+                dot.style.left = `${left}%`;
+                dot.style.top = `${top}%`;
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                dot.style.opacity = opacity;
+
+                bgDecor.appendChild(dot);
+            }
+        }
+
+        // 页面加载后生成
+        window.addEventListener('load', createDots);
+    </script>
+</body>
+</html>
