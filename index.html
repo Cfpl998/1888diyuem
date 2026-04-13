@@ -167,10 +167,44 @@
                 <i class="fas fa-gamepad" style="color: #82c91e;"></i>
                 <span class="text">世界美景</span>
             </a>
-            <a href="https://music.163.com/" class="nav-item" target="_blank">
-                <i class="fas fa-music" style="color: #8ab4f8;"></i>
-                <span class="text">氛围音乐</span>
-            </a>
+            <!-- 音乐按钮 -->
+<a href="javascript:toggleMusic();" class="nav-item" id="musicBtn">
+    <i class="fas fa-music" style="color: #8ab4f8;"></i>
+    <span class="text">播放氛围音乐</span>
+</a>
+<script>
+    // 全局音频对象
+    let audioPlayer = null;
+    let isPlaying = false;
+    // 精准获取音乐按钮的文字元素（只改这个按钮的文字！）
+    const musicText = document.querySelector('#musicBtn .text');
+
+    function toggleMusic() {
+        // 1. 初始化音频（网易云ID:1972736770）
+        if (!audioPlayer) {
+            audioPlayer = new Audio("https://music.163.com/song/media/outer/url?id=1972736770.mp3");
+            audioPlayer.loop = true; // 设置循环播放
+        }
+
+        // 2. 判断状态并切换
+        if (isPlaying) {
+            // 暂停并回到开头
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            isPlaying = false;
+            musicText.textContent = '播放氛围音乐'; // 只改音乐按钮文字
+        } else {
+            // 播放
+            audioPlayer.play().catch(err => {
+                console.log("播放失败:", err);
+                alert("音乐播放失败，请检查网络或版权限制");
+            });
+            isPlaying = true;
+            musicText.textContent = '暂停氛围音乐'; // 只改音乐按钮文字
+        }
+    }
+</script>
+
             <a href="https://www.astrobin.com/" class="nav-item" target="_blank">
                 <i class="fas fa-star" style="color: #8ab4f8;"></i>
                 <span class="text">星空探索</span>
